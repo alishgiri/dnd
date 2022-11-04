@@ -17,3 +17,7 @@ body,
 #root {
   height: 100%;
 }
+
+#nav-height {
+  height: 100px;
+}
