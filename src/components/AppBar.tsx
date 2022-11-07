@@ -8,9 +8,9 @@ const AppBar: React.FC = () => {
   const location = useLocation();
 
   return (
-    <Navbar bg="dark" variant="dark" id="nav-height" expand="lg">
+    <Navbar bg="dark" variant="dark" id="nav-height" expand="md">
       <Container>
-        <Navbar.Brand className="pe-auto" onClick={() => navigate("/")}>
+        <Navbar.Brand className="cursor-pointer" onClick={() => navigate("/")}>
           Dungeon & Dragons
         </Navbar.Brand>
         <Navbar.Toggle />
