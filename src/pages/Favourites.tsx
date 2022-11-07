@@ -1,7 +1,9 @@
+import Alert from "react-bootstrap/Alert";
 import { useEffect, useState } from "react";
 import { FixedSizeList } from "react-window";
+import Spinner from "react-bootstrap/Spinner";
+import Container from "react-bootstrap/Container";
 import AutoSizer from "react-virtualized-auto-sizer";
-import { Alert, Container, Spinner } from "react-bootstrap";
 
 import { Spell } from "../models/Spells";
 import DndService from "../services/DndService";
@@ -37,7 +39,20 @@ const FavouriteList: React.FC<CommonHandlerProps> = (props) => {
     }
   };
 
-  const displaySpellDetails = () => {};
+  const displaySpellDetails = async (spell: Spell) => {
+    try {
+      if (!spell.detail) {
+        props.toggleIsLoading();
+        spell.detail = await DndService.fetchSpellDetails(spell.url);
+        props.toggleIsLoading();
+        setFavourites([...favourites!]);
+      }
+      props.toggleModal(spell);
+    } catch (error) {
+      props.toggleModal();
+      props.handleError(error);
+    }
+  };
 
   const ListRow = ({
     index,

@@ -1,5 +1,6 @@
 import axiosInstance from "./BaseSerivce";
 import { Spell, Spells } from "../models/Spells";
+import { SpellDetail } from "../models/SpellDetail";
 
 let favouritesFromDatabase: Spell[] = [];
 
@@ -40,9 +41,15 @@ const removeSpellFromFav = async (spell: Spell): Promise<boolean> => {
   return Promise.resolve(true);
 };
 
+const fetchSpellDetails = async (endPoint: string): Promise<SpellDetail> => {
+  const res = await axiosInstance.get<SpellDetail>(endPoint);
+  return res.data;
+};
+
 const DndService = {
   fetchSpells,
   addSpellToFav,
+  fetchSpellDetails,
   removeSpellFromFav,
   fetchFavouriteSpells,
 };
