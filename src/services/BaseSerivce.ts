@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://www.dnd5eapi.co/api",
+  baseURL: "https://www.dnd5eapi.co",
   headers: {
     "Content-type": "application/json",
   },

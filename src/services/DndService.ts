@@ -4,7 +4,7 @@ import { Spell, Spells } from "../models/Spells";
 let favouritesFromDatabase: Spell[] = [];
 
 const fetchSpells = async (): Promise<Spells> => {
-  const res = await axiosInstance.get<Spells>("/spells");
+  const res = await axiosInstance.get<Spells>("/api/spells");
 
   // Highlight favourite items
   if (favouritesFromDatabase.length > 0) {
