@@ -1,14 +1,35 @@
+import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
+import { useNavigate, useLocation } from "react-router-dom";
 
-function AppBar() {
+const AppBar: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
-    <Navbar bg="dark" variant="dark" id="nav-height">
-      <Container fluid className="justify-content-center">
-        <h1 className="text-light">Dungeon & Gragons</h1>
+    <Navbar bg="dark" variant="dark" id="nav-height" expand="lg">
+      <Container>
+        <Navbar.Brand className="pe-auto" onClick={() => navigate("/")}>
+          Dungeon & Dragons
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Nav activeKey={location.pathname}>
+            <Nav.Link eventKey="/spells" onClick={() => navigate("/spells")}>
+              Spells
+            </Nav.Link>
+            <Nav.Link
+              eventKey="/favourites"
+              onClick={() => navigate("/favourites")}
+            >
+              Favourites
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-}
+};
 
 export default AppBar;
