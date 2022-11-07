@@ -7,4 +7,5 @@ export interface Spell {
   url: string;
   name: string;
   index: string;
+  isFav: boolean | null;
 }
