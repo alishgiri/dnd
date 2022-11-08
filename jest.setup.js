@@ -15,6 +15,8 @@ const handlers = [
   rest.get(`${baseUrl}/spells`, (req, res, ctx) => {
     return res(ctx.json(testData.spells), ctx.delay(200));
   }),
+  rest.get(`${baseUrl}/spells/acid-arrow`, (req, res, ctx) => {
+    return res(ctx.json(testData.acid_arrow_details), ctx.delay(200));
   }),
 ];
 
