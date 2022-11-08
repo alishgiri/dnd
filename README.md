@@ -1,11 +1,18 @@
-# Getting Started with Create React App
+# Dungeon & Dragons
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Please check package.json for app dependencies.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- The app displays list of all available DnD spells.
+- Spell description can be viewed upon clicking the spell name.
+- User can add/remove spell to the favourites list. 
 
+## Demo App
+Open [https://alishgiri.github.io/dnd]("https://alishgiri.github.io/dnd") to view it in the browser.
+
+
+## Technical Details
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -41,6 +48,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more about the APIs from [http://www.dnd5eapi.co/](http://www.dnd5eapi.co/).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
