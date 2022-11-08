@@ -14,16 +14,14 @@ const FavouriteList: React.FC<CommonHandlerProps> = (props) => {
   const [favourites, setFavourites] = useState<Spell[] | null>(null);
 
   useEffect(() => {
-    const getSpells = async () => {
+    (async () => {
       try {
         const favourites = await DndService.fetchFavouriteSpells();
         setFavourites(favourites);
       } catch (error) {
         props.handleError(error);
       }
-    };
-
-    getSpells();
+    })();
   }, []);
 
   const removeFromFav = async (spell: Spell) => {
