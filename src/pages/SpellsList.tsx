@@ -16,7 +16,7 @@ const SpellsList: React.FC<CommonHandlerProps> = (props) => {
   const [spellsCount, setSpellsCount] = useState<number | null>(null);
 
   useEffect(() => {
-    const getSpells = async () => {
+    (async () => {
       try {
         const spells = await DndService.fetchSpells();
         setSpells(spells.results);
@@ -24,9 +24,7 @@ const SpellsList: React.FC<CommonHandlerProps> = (props) => {
       } catch (error: any) {
         props.handleError(error);
       }
-    };
-
-    getSpells();
+    })();
   }, []);
 
   const addToFav = async (spell: Spell) => {
@@ -91,27 +89,24 @@ const SpellsList: React.FC<CommonHandlerProps> = (props) => {
           <Spinner animation="border" />
         </Row>
       ) : (
-        <>
-          <span data-testid="spells-list"></span>
-          <AutoSizer>
-            {({
-              height,
-              width,
-            }: {
-              height: number | string;
-              width: number | string;
-            }) => (
-              <FixedSizeList
-                width={width}
-                itemSize={120}
-                height={height}
-                itemCount={spellsCount!}
-              >
-                {ListRow}
-              </FixedSizeList>
-            )}
-          </AutoSizer>
-        </>
+        <AutoSizer>
+          {({
+            height,
+            width,
+          }: {
+            height: number | string;
+            width: number | string;
+          }) => (
+            <FixedSizeList
+              width={width}
+              itemSize={120}
+              height={height}
+              itemCount={spellsCount!}
+            >
+              {ListRow}
+            </FixedSizeList>
+          )}
+        </AutoSizer>
       )}
     </Container>
   );
