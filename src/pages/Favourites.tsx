@@ -74,7 +74,7 @@ const FavouriteList: React.FC<CommonHandlerProps> = (props) => {
   };
 
   if (favourites == null) {
-    return <Spinner animation="border" />;
+    return <Spinner data-testid="spinner" animation="border" />;
   }
 
   return (
@@ -84,6 +84,7 @@ const FavouriteList: React.FC<CommonHandlerProps> = (props) => {
           {props.errMsg}
         </Alert>
       )}
+
       {favourites.length === 0 ? (
         <Alert variant="secoundary" className="text-center my-5">
           List is empty!
