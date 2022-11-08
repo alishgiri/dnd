@@ -32,8 +32,8 @@ const SpellDetailsModal: React.FC<SpellDetailsModalProps> = (props) => (
           </p>
           <h4>Higher Level</h4>
           <p>
-            {props.spell?.detail?.highter_level
-              ? props.spell?.detail?.highter_level[0]
+            {props.spell?.detail?.higher_level
+              ? props.spell?.detail?.higher_level[0]
               : "n/a"}
           </p>
           <h4>Range</h4>
