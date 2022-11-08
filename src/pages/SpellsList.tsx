@@ -87,28 +87,31 @@ const SpellsList: React.FC<CommonHandlerProps> = (props) => {
         </Alert>
       )}
       {spells == null ? (
-        <Row className="mt-5 justify-content-center">
+        <Row data-testid="spinner" className="mt-5 justify-content-center">
           <Spinner animation="border" />
         </Row>
       ) : (
-        <AutoSizer>
-          {({
-            height,
-            width,
-          }: {
-            height: number | string;
-            width: number | string;
-          }) => (
-            <FixedSizeList
-              width={width}
-              itemSize={120}
-              height={height}
-              itemCount={spellsCount!}
-            >
-              {ListRow}
-            </FixedSizeList>
-          )}
-        </AutoSizer>
+        <>
+          <span data-testid="spells-list"></span>
+          <AutoSizer>
+            {({
+              height,
+              width,
+            }: {
+              height: number | string;
+              width: number | string;
+            }) => (
+              <FixedSizeList
+                width={width}
+                itemSize={120}
+                height={height}
+                itemCount={spellsCount!}
+              >
+                {ListRow}
+              </FixedSizeList>
+            )}
+          </AutoSizer>
+        </>
       )}
     </Container>
   );
