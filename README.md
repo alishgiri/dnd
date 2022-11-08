@@ -9,7 +9,7 @@ Please check package.json for app dependencies.
 - User can add/remove spell to the favourites list. 
 
 ## Demo App
-Open [https://alishgiri.github.io/dnd]("https://alishgiri.github.io/dnd") to view it in the browser.
+Open [https://alishgiri.github.io/dnd](https://alishgiri.github.io/dnd) to view it in the browser.
 
 
 ## Technical Details
