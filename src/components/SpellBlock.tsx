@@ -37,6 +37,7 @@ const SpellBlock: React.FC<SpellBlockProps> = ({
       </Card.Link>
       <Card.Link
         onClick={onFavClick}
+        data-testid={`fav-btn-${index}`}
         className="text-decoration-none cursor-pointer mt-3"
       >
         {spell.isFav ? Icons.favFilledIcon : Icons.favHollowIcon}

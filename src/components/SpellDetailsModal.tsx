@@ -12,7 +12,13 @@ interface SpellDetailsModalProps {
 }
 
 const SpellDetailsModal: React.FC<SpellDetailsModalProps> = (props) => (
-  <Modal size="lg" centered show={props.show} onHide={props.onHide}>
+  <Modal
+    centered
+    size="lg"
+    show={props.show}
+    onHide={props.onHide}
+    data-testid="spell-detail-modal"
+  >
     <Modal.Header closeButton>
       <Modal.Title>{props.spell?.name}</Modal.Title>
     </Modal.Header>
