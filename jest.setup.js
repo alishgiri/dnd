@@ -7,27 +7,14 @@ import "whatwg-fetch";
 // Extend Jest "expect" functionality with Testing Library assertions.
 import "@testing-library/jest-dom";
 
-const baseUrl = "https://www.dnd5eapi.co/api";
+import testData from "./test.data.json";
 
-const spells = {
-  count: 2,
-  results: [
-    {
-      name: "Acid Arrow",
-      index: "acid-arrow",
-      url: "/api/spells/acid-arrow",
-    },
-    {
-      name: "Acid Splash",
-      index: "acid-splash",
-      url: "/api/spells/acid-splash",
-    },
-  ],
-};
+const baseUrl = "https://www.dnd5eapi.co/api";
 
 const handlers = [
   rest.get(`${baseUrl}/spells`, (req, res, ctx) => {
-    return res(ctx.json(spells), ctx.delay(200));
+    return res(ctx.json(testData.spells), ctx.delay(200));
+  }),
   }),
 ];
 
