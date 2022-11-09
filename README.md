@@ -26,6 +26,8 @@ Open [https://alishgiri.github.io/dnd](https://alishgiri.github.io/dnd) to view 
 - `yarn test`
 - `yarn run build`
 - `yarn run eject`
+- `yarn run predeploy` - Utilized by gh-pages
+- `yarn run deploy` - for deploying to gh-pages 
 
 ## Learn More
 
