@@ -17,8 +17,8 @@ Open [https://alishgiri.github.io/dnd](https://alishgiri.github.io/dnd) to view 
 
 ## Test Overview
 - Babel & Jest are preconfigured before running tests.
-- `babel.config.js` and `jest.config.js` are used to configures testing environment for React Typescript.
-- `jest.setup.js` is used to setup mock APIs and to set the initial heigh and width of the `<AutoSizer />` component. Otherwise, list items will not be rendered due to unavailable height and width during component renderring.
+- `babel.config.js` and `jest.config.js` are used to configure testing environment for React Typescript.
+- `jest.setup.js` is used to setup mock APIs and to set the initial height and width of the `<AutoSizer />` component. Otherwise, list items will not be rendered due to unavailable height and width during component renderring.
 - `test.data.json` provides mock API response data.
 
 ## Common Scripts Available
