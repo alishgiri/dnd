@@ -12,7 +12,7 @@ import Favourites from "./Favourites";
 describe("Favourites: Add and remove a spell.", () => {
   afterEach(cleanup);
 
-  it("should add one sell to favourites from '/spells' page", async () => {
+  it("should add one spell to favourites from '/spells' page", async () => {
     render(<SpellsList />);
     await waitFor(() => {
       expect(screen.getByText("Acid Arrow")).toBeInTheDocument();
