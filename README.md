@@ -1,9 +1,7 @@
 # Dungeon & Dragons
-
-Please check package.json for app dependencies.
+View list of spells and add it to your favourites.
 
 ## Features
-
 - The app displays list of all available DnD spells.
 - Spell description can be viewed upon clicking the spell name.
 - User can add/remove spell to the favourites list. 
@@ -11,41 +9,24 @@ Please check package.json for app dependencies.
 ## Demo App
 Open [https://alishgiri.github.io/dnd](https://alishgiri.github.io/dnd) to view it in the browser.
 
+## Technical Overview
+- Utilizes latest React features like Hooks.
+- Typescript is used for strict type checking.
+- Virtulized list is used render list view for better performance.
+- Jest is utilized for component testing.
 
-## Technical Details
-### `npm start`
+## Test Overview
+- Babel & Jest are preconfigured before running tests.
+- `babel.config.js` and `jest.config.js` are used to configures testing environment for React Typescript.
+- `jest.setup.js` is used to setup mock APIs and to set the initial heigh and width of the <AutoSizer />. Otherwise, list items will not be rendered due to unavailable height and width during component renderring.
+- `test.data.json` provides mock API response data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Common Scripts Available
+- `yarn start`
+- `yarn test`
+- `yarn run build`
+- `yarn run eject`
 
 ## Learn More
 
-You can learn more about the APIs from [http://www.dnd5eapi.co/](http://www.dnd5eapi.co/).
+You can learn more about the Dnd APIs from [http://www.dnd5eapi.co/](http://www.dnd5eapi.co/).
