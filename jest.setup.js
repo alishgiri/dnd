@@ -1,9 +1,6 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 
-// Polyfill "window.fetch" used in the React component.
-import "whatwg-fetch";
-
 // Extend Jest "expect" functionality with Testing Library assertions.
 import "@testing-library/jest-dom";
 
@@ -22,6 +19,10 @@ const handlers = [
 
 const server = setupServer(...handlers);
 
+// These are necessary for AutoSizer from
+// "react-virtualized-auto-sizer" to work
+//
+// These will set the initial heigh and width of the <AutoSizer />
 const originalOffsetWidth = Object.getOwnPropertyDescriptor(
   HTMLElement.prototype,
   "offsetWidth"
